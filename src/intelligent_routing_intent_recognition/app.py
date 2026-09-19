@@ -7,6 +7,7 @@ from .llm_client import LlmClient
 from .router_service import RouterService
 
 app = Flask(__name__)
+app.json.ensure_ascii = False
 _config = load_config()
 _service = RouterService(LlmClient(_config))
 
